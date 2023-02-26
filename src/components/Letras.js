@@ -4,16 +4,14 @@ export default function Letras(props) {
         "u", "v", "w", "x", "y", "z"]
 
 function adicionar(){
-  let  contador = props.numeroImg+1
-    {props.setNumeroImg(contador)}
+    {props.setNumeroImg(props.numeroImg+1)}
 }
-
 
 
     return (
         <div className="contLetras">
             <ul className="letrinhas">
-                {alfabeto.map((e) => (<li><button onClick={adicionar} className="desabilitada" >{e.toUpperCase()}</button></li>))}
+                {alfabeto.map((e) => (<li><button disabled={props.blockAll?true :false} onClick={adicionar} className={props.blockAll} >{e.toUpperCase()}</button></li>))}
             </ul>
         </div>
     )
