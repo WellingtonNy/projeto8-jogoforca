@@ -1,9 +1,10 @@
 export default function Jogo(props){
 
+    
+    
     function escolhaPalavra() {
         let numeroAleatorio= Math.floor(Math.random() * props.palavras.length)
         props.setPalavra(props.palavras[numeroAleatorio])
-        console.log(props.palavras[numeroAleatorio]);
     }
 
     return(
@@ -13,7 +14,10 @@ export default function Jogo(props){
          </div>
          <div className="palavra">
             <button onClick={escolhaPalavra} className="escolha">Escolher Palavra</button>
-            <h1 className="tracinho">_ a s d _ _ _ _ _ _ _</h1>
+            <h1 className="tracinho">{props.palavra.split('').map((l)=>
+            <span className="sLetra">
+            <span className={props.letrasChute.includes(l)? '' : 'hiden'}>{l}</span>
+            </span>)}</h1>
          </div>
         </div>
     );
