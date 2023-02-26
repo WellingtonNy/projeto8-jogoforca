@@ -1,35 +1,20 @@
-export default function Letras(){
-    return(
+export default function Letras(props) {
+    const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h"
+        , "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
+        "u", "v", "w", "x", "y", "z"]
+
+function adicionar(){
+  let  contador = props.numeroImg+1
+    {props.setNumeroImg(contador)}
+}
+
+
+
+    return (
         <div className="contLetras">
-         <ul className="letrinhas">
-            <li>A</li>
-            <li>B</li>
-            <li>C</li>
-            <li>D</li>
-            <li>E</li>
-            <li>F</li>
-            <li>G</li>
-            <li>H</li>
-            <li>I</li>
-            <li className="desabilitada">J</li>
-            <li>K</li>
-            <li>L</li>
-            <li>M</li>
-            <li>A</li>
-            <li>B</li>
-            <li>C</li>
-            <li>D</li>
-            <li>E</li>
-            <li>F</li>
-            <li>G</li>
-            <li>H</li>
-            <li>I</li>
-            <li>J</li>
-            <li>K</li>
-            <li>L</li>
-            <li>M</li>
-         </ul>
-            
+            <ul className="letrinhas">
+                {alfabeto.map((e) => (<li><button onClick={adicionar} className="desabilitada" >{e.toUpperCase()}</button></li>))}
+            </ul>
         </div>
     )
 }

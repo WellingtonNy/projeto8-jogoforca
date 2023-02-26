@@ -71,7 +71,7 @@
     gap: 12px;
 }
 
-.letrinhas li {
+.letrinhas button {
     display: flex;
     align-items: center;
     justify-content: center;
