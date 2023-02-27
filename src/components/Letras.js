@@ -30,8 +30,8 @@ export default function Letras(props) {
             ganhou();
         } else {
             { props.setNumeroImg(props.numeroImg + 1) }
+            perdeu();
         }
-        perdeu();
     }
 
 

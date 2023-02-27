@@ -12,11 +12,11 @@ export default function Jogo(props) {
         props.setAcerto(0);
     }
 
-    
+
     return (
         <div className="jogo">
             <div className="img">
-                <img className="imagem" src={`assets/forca${props.numeroImg}.png`}alt=""></img>
+                <img className="imagem" src={`assets/forca${props.numeroImg}.png`}alt="forca"></img>
             </div>
             <div className="palavra">
                 <button onClick={escolhaPalavra} className="escolha">Escolher Palavra
