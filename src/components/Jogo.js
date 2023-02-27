@@ -1,32 +1,35 @@
-export default function Jogo(props){
+export default function Jogo(props) {
 
-    
-    
+
     function escolhaPalavra() {
-        let numeroAleatorio= Math.floor(Math.random() * props.palavras.length);
+        let numeroAleatorio = Math.floor(Math.random() * props.palavras.length);
         props.setPalavra(props.palavras[numeroAleatorio]);
-        props.setBlockAll('')
-        props.setNumeroImg(0)
-        props.setLetrasChute([])
-        props.setPerdeu(false)
-        props.setGanhou(false)
-        props.setAcerto(0)
+        props.setBlockAll('');
+        props.setNumeroImg(0);
+        props.setLetrasChute([]);
+        props.setPerdeu(false);
+        props.setGanhou(false);
+        props.setAcerto(0);
     }
 
-
-
-    return(
+    
+    return (
         <div className="jogo">
-         <div className="img">
-         <img className="imagem" src={`assets/forca${props.numeroImg}.png`} alt=""></img>
-         </div>
-         <div className="palavra">
-            <button onClick={escolhaPalavra} className="escolha">Escolher Palavra</button>
-            <h1  className="tracinho">{props.palavra.split('').map((l,i)=>
-            <span key={i} className="sLetra">
-            <span id="idLetra" className={`${props.perdeu?'erro':''} ${props.ganhou?'certo':''} ${props.letrasChute.includes(l)||props.perdeu? '' : 'hiden'}`}>{l}</span>
-            </span>)}</h1>
-         </div>
+            <div className="img">
+                <img className="imagem" src={`assets/forca${props.numeroImg}.png`}alt=""></img>
+            </div>
+            <div className="palavra">
+                <button onClick={escolhaPalavra} className="escolha">Escolher Palavra
+                </button>
+                <h1 className="tracinho">
+                    {props.palavra.split('').map((l, i) =>
+                        <span key={i} className="sLetra">
+                            <span id="idLetra"
+                                className={`${props.perdeu ? 'erro' : ''} ${props.ganhou ? 'certo' : ''} ${props.letrasChute.includes(l) || props.perdeu ? '' : 'hiden'}`}>{l}
+                            </span>
+                        </span>)}
+                </h1>
+            </div>
         </div>
     );
 }
