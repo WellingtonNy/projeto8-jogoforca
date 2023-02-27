@@ -4,11 +4,10 @@ export default function Jogo(props) {
     function tracinho(palavra){
     const numero =palavra.length;
     const mostrar =[];
-    let tela;
     for (let i = 0; i < numero; i++) {
         mostrar.push(' _ ');
     }
-    tela = mostrar.join('');
+    const tela = mostrar.join('');
     props.setMostrar(tela);
     }
 
