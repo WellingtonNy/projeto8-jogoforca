@@ -40,7 +40,7 @@ export default function Letras(props) {
             <ul className="letrinhas">
                 {alfabeto.map((e) => (
                     <li key={e}>
-                        <button disabled={props.blockAll || props.perdeu || props.ganhou || props.letrasChute.includes(e) ? true : false}
+                        <button data-test="letter" disabled={props.blockAll || props.perdeu || props.ganhou || props.letrasChute.includes(e) ? true : false}
                             onClick={() => {
                                 props.setLetrasChute((w) => [...w, e])
                                 certoErrado(e);

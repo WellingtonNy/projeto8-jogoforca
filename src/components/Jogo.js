@@ -16,15 +16,15 @@ export default function Jogo(props) {
     return (
         <div className="jogo">
             <div className="img">
-                <img className="imagem" src={`assets/forca${props.numeroImg}.png`}alt="forca"></img>
+                <img data-test="game-image" className="imagem" src={`assets/forca${props.numeroImg}.png`} alt="forca"></img>
             </div>
             <div className="palavra">
-                <button onClick={escolhaPalavra} className="escolha">Escolher Palavra
+                <button data-test="choose-word" onClick={escolhaPalavra}className="escolha">Escolher Palavra
                 </button>
                 <h1 className="tracinho">
                     {props.palavra.split('').map((l, i) =>
                         <span key={i} className="sLetra">
-                            <span id="idLetra"
+                            <span data-test="word" id="idLetra"
                                 className={`${props.perdeu ? 'erro' : ''} ${props.ganhou ? 'certo' : ''} ${props.letrasChute.includes(l) || props.perdeu ? '' : 'hiden'}`}>{l}
                             </span>
                         </span>)}
