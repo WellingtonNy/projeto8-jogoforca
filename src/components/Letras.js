@@ -4,19 +4,41 @@ export default function Letras(props) {
         "u", "v", "w", "x", "y", "z"]
 
 
+function perdeu(){
+    let numero =props.numeroImg
+    if(numero === 5){
+        console.log('perdeu');
+        {props.setPerdeu(true)}
+    }
+}
+
+function ganhou(){
+  let palavraCerta=props.palavra
+  console.log(palavraCerta)
+ let lulu= document.querySelector('.hiden')
+ console.log(lulu)
+ if(lulu){
+    console.log('luluON');
+ }else{
+    console.log('luluOFF Ganhou');
+ }
+}
+
+
 function certoErrado(e){
     if(props.palavra.includes(e)){
-        console.log('acerto miseravi')
+        ganhou()
     }else{
         {props.setNumeroImg(props.numeroImg+1)}
     }
+    perdeu()
 }
 
     return (
         <div className="contLetras">
             <ul className="letrinhas">
 
-                {alfabeto.map((e) => (<li key={e}><button disabled={props.blockAll?true :false} 
+                {alfabeto.map((e) => (<li key={e}><button  disabled={props.blockAll||props.perdeu||props.ganhou ?true :false}
                 
                 
                 
@@ -24,8 +46,7 @@ function certoErrado(e){
                 
                     { props.setLetrasChute((w)=>[...w,e])
                     console.log(props.letrasChute)
-                    certoErrado(e)
-                    
+                    certoErrado(e)                 
 }}
              
              
