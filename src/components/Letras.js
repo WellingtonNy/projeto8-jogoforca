@@ -13,14 +13,14 @@ function perdeu(){
 }
 
 function ganhou(){
-  let palavraCerta=props.palavra
-  console.log(palavraCerta)
- let lulu= document.querySelector('.hiden')
- console.log(lulu)
- if(lulu){
-    console.log('luluON');
- }else{
-    console.log('luluOFF Ganhou');
+ const palavraCerta = props.palavra.split('');
+ console.log(palavraCerta);
+ const arrSemRepetirElemento = [...new Set(palavraCerta)]
+ const tamanhoArr= arrSemRepetirElemento.length
+ props.setAcerto(props.acerto+1)
+ const numeroAcerto = props.acerto
+ if(tamanhoArr-1=== numeroAcerto){
+    props.setGanhou(true)
  }
 }
 
@@ -45,8 +45,7 @@ function certoErrado(e){
                 onClick={()=>
                 
                     { props.setLetrasChute((w)=>[...w,e])
-                    console.log(props.letrasChute)
-                    certoErrado(e)                 
+                    certoErrado(e)
 }}
              
              

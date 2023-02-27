@@ -9,6 +9,8 @@ export default function Jogo(props){
         props.setNumeroImg(0)
         props.setLetrasChute([])
         props.setPerdeu(false)
+        props.setGanhou(false)
+        props.setAcerto(0)
     }
 
 
@@ -22,7 +24,7 @@ export default function Jogo(props){
             <button onClick={escolhaPalavra} className="escolha">Escolher Palavra</button>
             <h1  className="tracinho">{props.palavra.split('').map((l,i)=>
             <span key={i} className="sLetra">
-            <span id="idLetra" className={`${props.perdeu?'erro':''} ${props.letrasChute.includes(l)||props.perdeu? '' : 'hiden'}`}>{l}</span>
+            <span id="idLetra" className={`${props.perdeu?'erro':''} ${props.ganhou?'certo':''} ${props.letrasChute.includes(l)||props.perdeu? '' : 'hiden'}`}>{l}</span>
             </span>)}</h1>
          </div>
         </div>

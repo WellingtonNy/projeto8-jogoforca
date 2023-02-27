@@ -12,10 +12,13 @@ const [letrasChute,setLetrasChute]=React.useState([])
 const [blockAll,setBlockAll]=React.useState('disabled')
 const [perdeu,setPerdeu]=React.useState(false)
 const [ganhou,setGanhou]=React.useState(false)
+const [acerto,setAcerto]=React.useState(0)
 
   return(
   <div className="container">
    <Jogo 
+   setGanhou={setGanhou}
+   setAcerto={setAcerto}
    ganhou={ganhou}
    setPerdeu={setPerdeu}
    perdeu={perdeu}
@@ -29,6 +32,8 @@ const [ganhou,setGanhou]=React.useState(false)
    setPalavra={setPalavra}
    numeroImg={numeroImg}/>
    <Letras 
+   setAcerto={setAcerto}
+   acerto={acerto}
    setGanhou={setGanhou}
    ganhou={ganhou}
    setPerdeu={setPerdeu}
