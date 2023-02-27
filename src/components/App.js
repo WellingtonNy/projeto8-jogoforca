@@ -15,6 +15,7 @@ const [blockAll,setBlockAll]=React.useState('disabled');
 const [perdeu,setPerdeu]=React.useState(false);
 const [ganhou,setGanhou]=React.useState(false);
 const [acerto,setAcerto]=React.useState(0);
+const [mostrar,setMostrar]=React.useState('');
 
 
   return(
@@ -34,6 +35,8 @@ const [acerto,setAcerto]=React.useState(0);
    ganhou={ganhou}
    setGanhou={setGanhou}
    setAcerto={setAcerto}
+   mostrar={mostrar}
+   setMostrar={setMostrar}
    />
    <Letras
    numeroImg={numeroImg}
@@ -49,6 +52,8 @@ const [acerto,setAcerto]=React.useState(0);
    setPerdeu={setPerdeu}
    acerto={acerto}
    setAcerto={setAcerto}
+   mostrar={mostrar}
+   setMostrar={setMostrar}
    />
   </div>
   );

@@ -8,7 +8,8 @@ export default function Letras(props) {
     function perdeu() {
         const numero = props.numeroImg;
         if (numero === 5) {
-            { props.setPerdeu(true); }
+            props.setPerdeu(true);
+            props.setMostrar(props.palavra);
         }
     }
 
@@ -21,12 +22,36 @@ export default function Letras(props) {
         const numeroAcerto = props.acerto;
         if (tamanhoArr - 1 === numeroAcerto) {
             props.setGanhou(true);
+            props.setMostrar(props.palavra);
         }
     }
 
 
+    function mostrarAcerto(e) {
+        const palavra = props.palavra;
+        const letras = props.letrasChute;
+        letras.push(e);
+        let tela = [];
+        let tela2;
+
+        for (let i = 0; i < palavra.length; i++) {
+            if (letras.includes(palavra[i])) {
+                tela.push(palavra[i]);
+            } else {
+                tela.push(' _ ');
+            }
+        }
+
+        letras.pop();
+        tela2 = tela.join('');
+        props.setMostrar(tela2);
+    }
+
+
+
     function certoErrado(e) {
         if (props.palavra.includes(e)) {
+            mostrarAcerto(e);
             ganhou();
         } else {
             { props.setNumeroImg(props.numeroImg + 1); }
