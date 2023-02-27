@@ -19,7 +19,7 @@ const [acerto,setAcerto]=React.useState(0);
 
   return(
   <div className="container">
-   <Jogo 
+   <Jogo
    palavras={palavras}
    numeroImg={numeroImg}
    setNumeroImg={setNumeroImg}
@@ -35,12 +35,12 @@ const [acerto,setAcerto]=React.useState(0);
    setGanhou={setGanhou}
    setAcerto={setAcerto}
    />
-   <Letras 
-   numeroImg={numeroImg} 
+   <Letras
+   numeroImg={numeroImg}
    setNumeroImg={setNumeroImg}
    palavra={palavra}
    letrasChute={letrasChute}
-   setLetrasChute={setLetrasChute} 
+   setLetrasChute={setLetrasChute}
    blockAll={blockAll}
    setBlockAll={setBlockAll}
    ganhou={ganhou}

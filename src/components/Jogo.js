@@ -2,7 +2,7 @@ export default function Jogo(props) {
 
 
     function escolhaPalavra() {
-        let numeroAleatorio = Math.floor(Math.random() * props.palavras.length);
+        const numeroAleatorio = Math.floor(Math.random() * props.palavras.length);
         props.setPalavra(props.palavras[numeroAleatorio]);
         props.setBlockAll('');
         props.setNumeroImg(0);

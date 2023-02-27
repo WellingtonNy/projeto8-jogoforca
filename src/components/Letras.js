@@ -6,9 +6,9 @@ export default function Letras(props) {
 
 
     function perdeu() {
-        let numero = props.numeroImg;
+        const numero = props.numeroImg;
         if (numero === 5) {
-            { props.setPerdeu(true) }
+            { props.setPerdeu(true); }
         }
     }
 
@@ -29,7 +29,7 @@ export default function Letras(props) {
         if (props.palavra.includes(e)) {
             ganhou();
         } else {
-            { props.setNumeroImg(props.numeroImg + 1) }
+            { props.setNumeroImg(props.numeroImg + 1); }
             perdeu();
         }
     }
@@ -43,7 +43,7 @@ export default function Letras(props) {
                         <button disabled={props.blockAll || props.perdeu || props.ganhou || props.letrasChute.includes(e) ? true : false}
                             onClick={() => {
                                 props.setLetrasChute((w) => [...w, e])
-                                certoErrado(e)
+                                certoErrado(e);
                             }}
                             className={`${props.blockAll} ${props.letrasChute.includes(e) ? 'disabled' : ''}`} >{e.toUpperCase()}
                         </button>
