@@ -14,6 +14,7 @@ const [blockAll,setBlockAll]=React.useState('disabled')
   return(
   <div className="container">
    <Jogo 
+   setLetrasChute={setLetrasChute}
    setNumeroImg={setNumeroImg}
    setBlockAll={setBlockAll}
    blockAll={blockAll}
@@ -23,7 +24,9 @@ const [blockAll,setBlockAll]=React.useState('disabled')
    setPalavra={setPalavra}
    numeroImg={numeroImg}/>
    <Letras 
+   palavra={palavra}
    setLetrasChute={setLetrasChute} 
+   letrasChute={letrasChute}
    numeroImg={numeroImg} 
    setNumeroImg={setNumeroImg}
    blockAll={blockAll}

@@ -3,15 +3,35 @@ export default function Letras(props) {
         , "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
         "u", "v", "w", "x", "y", "z"]
 
-function adicionar(){
-    {props.setNumeroImg(props.numeroImg+1)}
-}
 
+function certoErrado(e){
+    if(props.palavra.includes(e)){
+        console.log('acerto miseravi')
+    }else{
+        {props.setNumeroImg(props.numeroImg+1)}
+    }
+}
 
     return (
         <div className="contLetras">
             <ul className="letrinhas">
-                {alfabeto.map((e) => (<li><button disabled={props.blockAll?true :false} onClick={adicionar} className={props.blockAll} >{e.toUpperCase()}</button></li>))}
+
+                {alfabeto.map((e) => (<li key={e}><button disabled={props.blockAll?true :false} 
+                
+                
+                
+                onClick={()=>
+                
+                    { props.setLetrasChute((w)=>[...w,e])
+                    console.log(props.letrasChute)
+                    certoErrado(e)
+                    
+}}
+             
+             
+             
+             
+              className={props.blockAll} >{e.toUpperCase()}</button></li>))}
             </ul>
         </div>
     )
