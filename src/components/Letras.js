@@ -31,8 +31,7 @@ export default function Letras(props) {
         const palavra = props.palavra;
         const letras = props.letrasChute;
         letras.push(e);
-        let tela = [];
-        let tela2;
+        const tela = [];
 
         for (let i = 0; i < palavra.length; i++) {
             if (letras.includes(palavra[i])) {
@@ -43,7 +42,7 @@ export default function Letras(props) {
         }
 
         letras.pop();
-        tela2 = tela.join('');
+        const tela2 = tela.join('');
         props.setMostrar(tela2);
     }
 
@@ -67,7 +66,7 @@ export default function Letras(props) {
                     <li key={e}>
                         <button data-test="letter" disabled={props.blockAll || props.perdeu || props.ganhou || props.letrasChute.includes(e) ? true : false}
                             onClick={() => {
-                                props.setLetrasChute((w) => [...w, e])
+                                props.setLetrasChute((w) => [...w, e]);
                                 certoErrado(e);
                             }}
                             className={`${props.blockAll} ${props.letrasChute.includes(e) ? 'disabled' : ''}`} >{e.toUpperCase()}

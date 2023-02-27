@@ -3,13 +3,13 @@ export default function Jogo(props) {
 
     function tracinho(palavra){
     const numero =palavra.length;
-    let mostrar =[]
+    const mostrar =[];
     let tela;
     for (let i = 0; i < numero; i++) {
-        mostrar.push(' _ ')
+        mostrar.push(' _ ');
     }
-    tela = mostrar.join('')
-    props.setMostrar(tela)
+    tela = mostrar.join('');
+    props.setMostrar(tela);
     }
 
 
@@ -22,7 +22,7 @@ export default function Jogo(props) {
         props.setPerdeu(false);
         props.setGanhou(false);
         props.setAcerto(0);
-        tracinho(props.palavras[numeroAleatorio])
+        tracinho(props.palavras[numeroAleatorio]);
     }
 
 
