@@ -37,11 +37,11 @@ Os Conteudos Praticados e Revisados incluem:
  
 - React.js
 
-## COMO RODAR
+## Como Rodar
 
 Copie o projeto para seu pc usando :
 ```sh
-git clone 123
+git clone https://github.com/WellingtonNy/projeto8-jogoforca.git
 ```
 instale as dependencias usando :
 
