@@ -36,9 +36,22 @@ Os Conteudos Praticados e Revisados incluem:
 ## Tecnologias
  
 - React.js
- 
-- Styled Components
 
 ## COMO RODAR
 
+Copie o projeto para seu pc usando :
+```sh
+git clone 123
+```
+instale as dependencias usando :
+
+```sh
+npm i
+```
+
+agora basta rodar a aplicação com :
+
+```sh
+npm start
+```
 
